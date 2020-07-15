@@ -4,8 +4,8 @@
   "description": "Display a parent page to include all 4-8 team modules, along with placeholder content for the rest.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server",
-    "seed": "node db/seed.js",
+    "start": "nodemon server & ../steam-reviews-graph/nodemon server  & ../steam-reviews-graph/nodemon server ",
+    "seed": "node ../steam-reviews/db/seed.js node ../steam-reviews/db/seed.js",
     "build": "webpack -d --watch --mode production",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:react": "webpack -d --watch"
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/FEC-Bell/steam-user-tags#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.2",
