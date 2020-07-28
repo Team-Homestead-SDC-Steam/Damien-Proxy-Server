@@ -1,12 +1,9 @@
 /* eslint-disable no-console */
 const express = require('express');
 const path = require('path');
-const cors = require('cors');
 
 const app = express();
 const port = 3000;
-
-app.use(cors());
 
 app.listen(port, () => console.log(`Steam proxy. Not listening at http://localhost:${port}`));
 app.use(express.static('./client/dist'));
@@ -17,15 +14,10 @@ app.get('/app/:gameId', (req, res) => {
 
 app.get('/api/dlc/:gameId', (req, res) => {
   console.log(req.params.gameId);
-  res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
+  res.sendFile();
 });
 
-
-
 // Redirect API calls
-
-
-
 
 // const dlc = express.Router();
 // app.use('/api/dlc', dlc);
