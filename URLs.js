@@ -1,20 +1,39 @@
-const dev = true;
+const dev = false;
 
-const URLs = {
-  gamereviews: 'http://ec2-13-59-202-34.us-east-2.compute.amazonaws.com:3001',
-  description: 'http://ec2-13-59-202-34.us-east-2.compute.amazonaws.com:3005',
-  reviews: 'http://44.233.13.178:3002',
-  reviewcount: 'http://44.233.13.178:3002',
-  tags: 'http://44.233.13.178:3006',
-  dlc: 'localhost:3007',
-  related: 'localhost:3007',
-  media: 'http://ec2-18-188-192-44.us-east-2.compute.amazonaws.com:3004',
-  system: 'http://localhost:3008'
-};
+const URLs = [
+  {
+    match: '/api/gamereviews/', 
+    server: 'ec2-13-59-202-34.us-east-2.compute.amazonaws.com:3001',
+  },
+  {
+    match: '/api/reviewcount/',
+    server: '44.233.13.178:3002',
+  },
+  {
+    match: '/api/dlc/',
+    server: 'ec2-13-56-224-137.us-west-1.compute.amazonaws.com:3003',
+  },
+  {
+    match: '/api/media/',
+    server: 'ec2-18-188-192-44.us-east-2.compute.amazonaws.com:3004',
+  },
+  {
+    match: '/api/description/',
+    server: 'ec2-13-59-202-34.us-east-2.compute.amazonaws.com:3005',
+  },
+  {
+    match: '/tags.css',
+    server: '44.233.13.178:3006',
+  },
+  {
+    match: '/graph.css',
+    server: '44.233.13.178:3002',
+  },
+];
 
 if (dev) {
-  URLs.reviews = 'localhost:3002';
-  URLs.tags = 'localhost:3006';
+  URLs[1].server = 'localhost:3002';
+  URLs[5].server = 'localhost:3006';
 }
 
 module.exports = URLs;

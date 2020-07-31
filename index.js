@@ -6,7 +6,7 @@ const URLs = require('./URLs.js');
 const app = express();
 const port = 3000;
 
-console.log(URLs);
+// console.log(URLs);
 app.listen(port, () => console.log(`Steam proxy. Not listening at http://localhost:${port}`));
 app.use(express.static('./client/dist'));
 
@@ -14,32 +14,8 @@ app.get('/app/:gameId', (req, res) => {
   res.sendFile(path.join(__dirname, 'client', 'dist', 'index.html'));
 });
 
-let serverpath = 'ec2-13-59-202-34.us-east-2.compute.amazonaws.com:3001';
-app.get('/api/gamereviews/*', (req, res) => {
-  res.redirect(`${req.protocol}://${serverpath}${req.originalUrl}`);
-});
-
-serverpath = 'ec2-44-233-13-178.us-west-2.compute.amazonaws.com:3002';
-app.get('/api/reviewcount/*', (req, res) => {
-  res.redirect(`${req.protocol}://${serverpath}${req.originalUrl}`);
-});
-
-serverpath = 'ec2-13-56-224-137.us-west-1.compute.amazonaws.com:3003';
-app.get('/api/dlc/*', (req, res) => {
-  res.redirect(`${req.protocol}://${serverpath}${req.originalUrl}`);
-});
-
-serverpath = 'ec2-18-188-192-44.us-east-2.compute.amazonaws.com:3004';
-app.get('/api/media/*', (req, res) => {
-  res.redirect(`${req.protocol}://${serverpath}${req.originalUrl}`);
-});
-
-serverpath = 'ec2-13-59-202-34.us-east-2.compute.amazonaws.com:3005';
-app.get('/api/description/*', (req, res) => {
-  res.redirect(`${req.protocol}://${serverpath}${req.originalUrl}`);
-});
-
-serverpath = '44.233.13.178:3006';
-app.get('/api/tags/*', (req, res) => {
-  res.redirect(`${req.protocol}://${serverpath}${req.originalUrl}`);
+URLs.forEach( (mapping) => {
+  app.get(`${mapping.match}*`, (req, res) => {
+    res.redirect(`${req.protocol}://${mapping.server}${req.originalUrl}`);
+  });
 });
