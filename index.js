@@ -37,14 +37,6 @@ app.get('/api/media/*', (req, res) => {
 serverpath = 'ec2-13-59-202-34.us-east-2.compute.amazonaws.com:3005';
 app.get('/api/description/*', (req, res) => {
   res.redirect(`${req.protocol}://${serverpath}${req.originalUrl}`);
-<<<<<<< HEAD
-=======
-});
-
-serverpath = '44.233.13.178:3006';
-app.get('/api/tags/*', (req, res) => {
-  res.redirect(`${req.protocol}://${serverpath}${req.originalUrl}`);
->>>>>>> 7b163a4ec2909a9627e04b077c6cdea11de5ddc9
 });
 
 serverpath = '44.233.13.178:3006';
