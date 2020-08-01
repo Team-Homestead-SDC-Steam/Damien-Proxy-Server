@@ -1,8 +1,8 @@
-const dev = false;
+const dev = true;
 
 const URLs = [
   {
-    match: '/api/gamereviews/', 
+    match: '/api/gamereviews/',
     server: 'ec2-13-59-202-34.us-east-2.compute.amazonaws.com:3000',
   },
   {
@@ -24,14 +24,6 @@ const URLs = [
   {
     match: '/api/tags/',
     server: '44.233.13.178:3006',
-  },
-  {
-    match: '/tags.css',
-    server: '44.233.13.178:3006',
-  },
-  {
-    match: '/graph.css',
-    server: '44.233.13.178:3002',
   },
 ];
 

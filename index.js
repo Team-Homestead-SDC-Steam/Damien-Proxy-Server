@@ -6,8 +6,9 @@ const URLs = require('./URLs.js');
 const app = express();
 const port = 3000;
 
-// console.log(URLs);
+console.log(URLs);
 app.listen(port, () => console.log(`Steam proxy. Not listening at http://localhost:${port}`));
+
 app.use(express.static('./client/dist'));
 
 app.get('/app/:gameId', (req, res) => {
