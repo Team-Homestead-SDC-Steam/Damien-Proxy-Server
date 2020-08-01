@@ -15,10 +15,11 @@ const Page = () => (
         </td>
       </tr>
     </table>
-    <div id="dlc" />
+
     <div id="system-requirements" />
     <div id="related-games" />
     <img alt="Game bundles" src="/images/proxy-bundle.png" />
+    <div id="dlc" />
     <table>
       <tr>
         <td>
