@@ -1,5 +1,3 @@
-const dev = true;
-
 const URLs = [
   {
     match: '/api/gamereviews/',
@@ -7,7 +5,7 @@ const URLs = [
   },
   {
     match: '/api/reviewcount/',
-    server: '44.233.13.178:3002',
+    server: 'localhost:3002',
   },
   {
     match: '/api/dlc/',
@@ -23,13 +21,8 @@ const URLs = [
   },
   {
     match: '/api/tags/',
-    server: '44.233.13.178:3006',
+    server: 'localhost:3006',
   },
 ];
-
-if (dev) {
-  URLs[1].server = 'localhost:3002';
-  URLs[5].server = 'localhost:3006';
-}
 
 module.exports = URLs;

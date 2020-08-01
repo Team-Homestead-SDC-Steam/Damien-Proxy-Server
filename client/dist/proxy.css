@@ -16,3 +16,22 @@ body {
 #top_container > img {
   display: inline-block;
 }
+#top_container > div, #top_container table tr td div {
+  display: inline-block;
+}
+
+#top_container table tr td {
+  vertical-align: top;
+}
+#top_container img {
+  display:block;
+}
+
+#top_container #user-tags {
+  margin-top: -20px;
+  margin-left:5px;
+}
+
+#top_container #game-description {
+  margin-left:5px;
+}
