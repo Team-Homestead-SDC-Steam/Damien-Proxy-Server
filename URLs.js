@@ -5,7 +5,7 @@ const URLs = [
   },
   {
     match: '/api/reviewcount/',
-    server: 'http://44.233.13.178:3002',
+    server: '44.233.13.178:3002',
   },
   {
     match: '/api/dlc/',
@@ -21,7 +21,7 @@ const URLs = [
   },
   {
     match: '/api/tags/',
-    server: 'http://44.233.13.178:3006',
+    server: '44.233.13.178:3006',
   },
 ];
 
