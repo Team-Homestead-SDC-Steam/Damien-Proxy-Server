@@ -1,6 +1,37 @@
 body {
-  background-color: rgb(23, 26, 33);
+  text-align: center;
 }
-div {
-  font-family:"Motiva Sans", sans-serif;
+
+#top_container {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 3px;
+  background-color:rgb(23, 26, 33);
+  color:rgb(198, 212, 223);
+  font-family: "Motiva Sans", Arial, Helvetica, sans-serif;
+  max-width: 947px;
+  text-align:left;
+}
+
+#top_container > img {
+  display: inline-block;
+}
+#top_container > div, #top_container table tr td div {
+  display: inline-block;
+}
+
+#top_container table tr td {
+  vertical-align: top;
+}
+#top_container img {
+  display:block;
+}
+
+#top_container #user-tags {
+  margin-top: -20px;
+  margin-left:5px;
+}
+
+#top_container #game-description {
+  margin-left:5px;
 }
