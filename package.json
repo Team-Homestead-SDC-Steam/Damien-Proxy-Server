@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/FEC-Bell/steam-user-tags#readme",
   "dependencies": {
-    "async": "^3.2.0",
+    "async": "^3.2.2",
     "child_process": "^1.0.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
